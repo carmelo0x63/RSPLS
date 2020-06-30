@@ -14,7 +14,10 @@ def number_to_name(input1):
 
 def rspls(p1_trw, cpu, debug):
     result = (cpu - name_to_number(p1_trw)) % 5
-    if debug: print('[+] Player1 throws: ' + p1_trw + ', Computer throws: ' + number_to_name(cpu) + ', RESULT: ' + str(result))
+    jout = dict([('cpu', number_to_name(cpu)), ('player1', p1_trw), ('result', str(result))])
+    if debug:
+        print('[+] ', end = '')
+        print(jout)
     if (result == 3) or (result == 4):
         print('[+] Player1 wins!')
     elif (result == 1) or (result == 2):
